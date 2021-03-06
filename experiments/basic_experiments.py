@@ -18,7 +18,7 @@ def perform_experiment(
    train_n_dw_matrix, test_n_dw_matrix, optimizer,
    T, samples, output_path , tau , path_phi_output 
 ):
-
+   "Проводит эксперимент. Сохраняет его результаты в output_path и полученную матрицу phi в path_phi_output."
     optimizer.iteration_callback = experiments.default_callback(
         train_n_dw_matrix = train_n_dw_matrix,
         test_n_dw_matrix = test_n_dw_matrix,
