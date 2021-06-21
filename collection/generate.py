@@ -37,3 +37,8 @@ def generate_collection(num_docs, phi, theta, num_words_in_doc=WORDS):
         collection.append(generate_doc(i, phi, theta, num_words_in_doc))
     return collection
 
+def check_imbalance_degree(theta,phone_deg):
+    "Выдает пару степеней несбалансированности сгенерированной Theta: для первого и второго смысла
+    deg1 = np.max((np.sum(theta,axis = 1)))/np.min(np.sum(theta,axis = 1))
+    deg2 = np.sum(np.abs((np.sum(theta,axis = 1) - (1 - phone_deg)*20)))
+    return (deg1,deg2)
